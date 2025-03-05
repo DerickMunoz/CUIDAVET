@@ -1,5 +1,5 @@
 <!-- Left side column. contains the logo and sidebar -->
-<aside class="main-sidebar">
+<aside class="main-sidebar fixed-menu">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
         <!-- sidebar menu: : style can be found in sidebar.less -->
@@ -14,6 +14,12 @@
             <li>
                 <a href="{{ url('Clientes') }}">
                     <i class="fa fa-users"></i> <span>Clientes</span>
+                </a>
+            </li>
+            <!-- Menu item: Empleados -->
+            <li>
+                <a href="{{ url('Empleados') }}">
+                    <i class="fa fa-id-badge"></i> <span>Empleados</span>
                 </a>
             </li>
             <!-- Menu item: Mascotas -->

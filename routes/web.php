@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\EmpleadosController;
+use App\Http\Controllers\ClientesController;
 
 Route::get('/', function () {
     if (Auth::check()) {
@@ -16,9 +17,19 @@ Route::get('/', function () {
 Route::get('/ajustes', [EmpleadosController::class, 'Ajustes'])->name('ajustes.index');
 Route::put('/ajustes/{id}', [EmpleadosController::class, 'update'])->name('ajustes.update');
 
-Route::get('/Clientes', function () {
-    return view('modulos.clientes');
-})->name('Clientes');
+Route::get('/Clientes', [ClientesController::class, 'index'])->name('Clientes');
+Route::get('/Clientes/create', [ClientesController::class, 'create'])->name('clientes.create');
+Route::post('/Clientes', [ClientesController::class, 'store'])->name('clientes.store');
+Route::get('/Clientes/{id}/edit', [ClientesController::class, 'edit'])->name('clientes.edit');
+Route::put('/Clientes/{id}', [ClientesController::class, 'update'])->name('clientes.update');
+Route::delete('/Clientes/{id}', [ClientesController::class, 'destroy'])->name('clientes.destroy');
+
+Route::get('/Empleados', [EmpleadosController::class, 'index'])->name('Empleados');
+Route::get('/Empleados/create', [EmpleadosController::class, 'create'])->name('empleados.create');
+Route::post('/Empleados', [EmpleadosController::class, 'store'])->name('empleados.store');
+Route::get('/Empleados/{id}/edit', [EmpleadosController::class, 'edit'])->name('empleados.edit');
+Route::put('/Empleados/{id}', [EmpleadosController::class, 'update'])->name('empleados.update');
+Route::delete('/Empleados/{id}', [EmpleadosController::class, 'destroy'])->name('empleados.destroy');
 
 Route::get('/Mascotas', function () {
     return view('modulos.mascotas');
@@ -67,6 +78,12 @@ Route::get('/Ventas', function () {
 Route::get('/Informes', function () {
     return view('modulos.informes');
 })->name('Informes');
+
+Route::get('/perfil', function () {
+    return view('modulos.perfil');
+})->name('perfil');
+
+//Route::get('RegistrarEmpleado', [EmpleadosController::class, 'create']);
 
 Auth::routes(['login' => false]); // Deshabilitar la ruta de login predeterminada
 

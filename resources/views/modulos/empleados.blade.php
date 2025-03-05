@@ -2,9 +2,9 @@
 
 @section('contenido')
     <section class="content-header">
-        <h1>Clientes</h1>
+        <h1>Empleados</h1>
         <div class="text-right">
-            <a href="{{ route('clientes.create') }}" class="btn btn-primary">Agregar Cliente</a>
+            <a href="{{ route('empleados.create') }}" class="btn btn-primary">Agregar Empleado</a>
         </div>
     </section>
     <section class="content">
@@ -13,7 +13,6 @@
                 <table class="table table-bordered table-hover">
                     <thead>
                         <tr>
-                            <th>DNI</th>
                             <th>Nombre</th>
                             <th>Apellido</th>
                             <th>Teléfono</th>
@@ -23,17 +22,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($clientes as $cliente)
+                        @foreach($empleados as $empleado)
                             <tr>
-                                <td>{{ $cliente->dni }}</td>
-                                <td>{{ $cliente->nombre }}</td>
-                                <td>{{ $cliente->apellido }}</td>
-                                <td>{{ $cliente->telefono }}</td>
-                                <td>{{ $cliente->correo }}</td>
-                                <td>{{ $cliente->estado }}</td>
+                                <td>{{ $empleado->nombre }}</td>
+                                <td>{{ $empleado->apellido }}</td>
+                                <td>{{ $empleado->telefono }}</td>
+                                <td>{{ $empleado->correo }}</td>
+                                <td>{{ $empleado->estado }}</td>
                                 <td>
-                                    <a href="{{ route('clientes.edit', $cliente->id) }}" class="btn btn-warning">Editar</a>
-                                    <form action="{{ route('clientes.destroy', $cliente->id) }}" method="POST" style="display:inline;">
+                                    <a href="{{ route('empleados.edit', $empleado->id) }}" class="btn btn-warning">Editar</a>
+                                    <form action="{{ route('empleados.destroy', $empleado->id) }}" method="POST" style="display:inline;">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Eliminar</button>
