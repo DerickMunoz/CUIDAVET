@@ -1,7 +1,7 @@
 <header class="main-header">
     <!-- Logo -->
     <a href="{{ url('Inicio') }}" class="logo">
-      <!-- logo para el estado regular y dispositivos móviles -->
+      <!-- logo para el estado regular y dispositivos móviles -->
       <span class="logo-mini">
         <img src="{{ url('dist/img/logo_cuidavet_blanco.png') }}" alt="CUIDAVET Logo" style="height: 30px; width: auto;">
       </span>
@@ -36,7 +36,7 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="#" class="btn btn-primary btn-flat">Perfil</a>
+                  <a href="{{ route('perfil') }}" class="btn btn-primary btn-flat">Perfil</a>
                 </div>
                 <div class="pull-right">
                   <a href="{{ route('logout')}}" class="btn btn-danger btn-flat" 
