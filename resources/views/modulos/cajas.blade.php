@@ -8,7 +8,7 @@
         <div class="box">
             <div class="box-body">
                 <!-- Contenido de la página de Cajas -->
-                <p>Bienvenido a la página de Cajas.</p>
+                <p>Bienvenido a la página de es una prueba.</p>
             </div>
         </div>
     </section>
