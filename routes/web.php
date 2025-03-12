@@ -23,7 +23,17 @@ Route::post('/Clientes', [ClientesController::class, 'store'])->name('clientes.s
 Route::get('/Clientes/{id}/edit', [ClientesController::class, 'edit'])->name('clientes.edit');
 Route::put('/Clientes/{id}', [ClientesController::class, 'update'])->name('clientes.update');
 Route::delete('/Clientes/{id}', [ClientesController::class, 'destroy'])->name('clientes.destroy');
+<<<<<<< HEAD
 Route::get('/clientes/buscar-por-dni', [ClientesController::class, 'buscarPorDni'])->name('clientes.buscarPorDni');
+=======
+
+Route::get('/Empleados', [EmpleadosController::class, 'index'])->name('Empleados');
+Route::get('/Empleados/create', [EmpleadosController::class, 'create'])->name('empleados.create');
+Route::post('/Empleados', [EmpleadosController::class, 'store'])->name('empleados.store');
+Route::get('/Empleados/{id}/edit', [EmpleadosController::class, 'edit'])->name('empleados.edit');
+Route::put('/Empleados/{id}', [EmpleadosController::class, 'update'])->name('empleados.update');
+Route::delete('/Empleados/{id}', [EmpleadosController::class, 'destroy'])->name('empleados.destroy');
+>>>>>>> 3e452ff3a31586fa7de23ffca2b04147bf0c6b4f
 
 Route::get('/Empleados', [EmpleadosController::class, 'index'])->name('Empleados');
 Route::get('/Empleados/create', [EmpleadosController::class, 'create'])->name('empleados.create');

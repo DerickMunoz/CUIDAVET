@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Cliente;
 use App\Models\Moneda;
+<<<<<<< HEAD
 use Illuminate\Support\Facades\Auth;
+=======
+>>>>>>> 3e452ff3a31586fa7de23ffca2b04147bf0c6b4f
 
 class ClientesController extends Controller
 {
@@ -92,6 +95,7 @@ class ClientesController extends Controller
             'correo' => 'Las credenciales proporcionadas no coinciden con nuestros registros.',
         ]);
     }
+<<<<<<< HEAD
 
     /**
      * Buscar cliente por DNI
@@ -129,3 +133,6 @@ class ClientesController extends Controller
         }
     }
 }
+=======
+}
+>>>>>>> 3e452ff3a31586fa7de23ffca2b04147bf0c6b4f

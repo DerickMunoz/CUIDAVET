@@ -3,13 +3,17 @@
 @section('contenido')
     <section class="content-header">
         <h1>Mascotas</h1>
+<<<<<<< HEAD
         <div class="text-right">
             <a href="{{ route('mascotas.create') }}" class="btn btn-primary">Agregar Mascota</a>
         </div>
+=======
+>>>>>>> 3e452ff3a31586fa7de23ffca2b04147bf0c6b4f
     </section>
     <section class="content">
         <div class="box">
             <div class="box-body">
+<<<<<<< HEAD
                 @if (session('success'))
                     <div class="alert alert-success alert-dismissible">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -60,3 +64,11 @@
         </div>
     </section>
 @endsection
+=======
+                <!-- Contenido de la página de Mascotas -->
+                <p>Bienvenido a la página de Mascotas.</p>
+            </div>
+        </div>
+    </section>
+@endsection
+>>>>>>> 3e452ff3a31586fa7de23ffca2b04147bf0c6b4f
