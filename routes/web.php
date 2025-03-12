@@ -5,6 +5,13 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\EmpleadosController;
 use App\Http\Controllers\ClientesController;
+use App\Http\Controllers\MonedaController;
+use App\Http\Controllers\RolController;
+use App\Http\Controllers\DepartamentoController;
+use App\Http\Controllers\AjustesController;
+use App\Http\Controllers\NacionalidadesController;
+
+Route::get('RegistrarEmpleado', [EmpleadosController::class, 'create']);
 
 Route::get('/', function () {
     if (Auth::check()) {
@@ -14,8 +21,8 @@ Route::get('/', function () {
     }
 });
 
-Route::get('/ajustes', [EmpleadosController::class, 'Ajustes'])->name('ajustes.index');
-Route::put('/ajustes/{id}', [EmpleadosController::class, 'update'])->name('ajustes.update');
+Route::get('/ajustes', [AjustesController::class, 'index'])->name('ajustes.index');
+Route::put('/ajustes/{id}', [AjustesController::class, 'update'])->name('ajustes.update');
 
 Route::get('/Clientes', [ClientesController::class, 'index'])->name('Clientes');
 Route::get('/Clientes/create', [ClientesController::class, 'create'])->name('clientes.create');
@@ -23,17 +30,7 @@ Route::post('/Clientes', [ClientesController::class, 'store'])->name('clientes.s
 Route::get('/Clientes/{id}/edit', [ClientesController::class, 'edit'])->name('clientes.edit');
 Route::put('/Clientes/{id}', [ClientesController::class, 'update'])->name('clientes.update');
 Route::delete('/Clientes/{id}', [ClientesController::class, 'destroy'])->name('clientes.destroy');
-<<<<<<< HEAD
 Route::get('/clientes/buscar-por-dni', [ClientesController::class, 'buscarPorDni'])->name('clientes.buscarPorDni');
-=======
-
-Route::get('/Empleados', [EmpleadosController::class, 'index'])->name('Empleados');
-Route::get('/Empleados/create', [EmpleadosController::class, 'create'])->name('empleados.create');
-Route::post('/Empleados', [EmpleadosController::class, 'store'])->name('empleados.store');
-Route::get('/Empleados/{id}/edit', [EmpleadosController::class, 'edit'])->name('empleados.edit');
-Route::put('/Empleados/{id}', [EmpleadosController::class, 'update'])->name('empleados.update');
-Route::delete('/Empleados/{id}', [EmpleadosController::class, 'destroy'])->name('empleados.destroy');
->>>>>>> 3e452ff3a31586fa7de23ffca2b04147bf0c6b4f
 
 Route::get('/Empleados', [EmpleadosController::class, 'index'])->name('Empleados');
 Route::get('/Empleados/create', [EmpleadosController::class, 'create'])->name('empleados.create');
@@ -45,7 +42,6 @@ Route::delete('/Empleados/{id}', [EmpleadosController::class, 'destroy'])->name(
 use App\Http\Controllers\MascotasController;
 
 // Rutas para mascotas
-// Rutas para mascotas
 Route::get('/Mascotas', [MascotasController::class, 'index'])->name('mascotas.index');
 Route::get('/Mascotas/create', [MascotasController::class, 'create'])->name('mascotas.create');
 Route::post('/Mascotas', [MascotasController::class, 'store'])->name('mascotas.store');
@@ -53,10 +49,6 @@ Route::get('/Mascotas/{id}/edit', [MascotasController::class, 'edit'])->name('ma
 Route::put('/Mascotas/{id}', [MascotasController::class, 'update'])->name('mascotas.update');
 Route::delete('/Mascotas/{id}', [MascotasController::class, 'destroy'])->name('mascotas.destroy');
 Route::get('/Mascotas/buscar-cliente', [MascotasController::class, 'buscarCliente'])->name('mascotas.buscarCliente');
-
-Route::get('/Usuarios', function () {
-    return view('modulos.usuarios');
-})->name('Usuarios');
 
 Route::get('/Veterinarios', function () {
     return view('modulos.veterinarios');
@@ -85,7 +77,6 @@ Route::post('/Categorias', [CategoriasController::class, 'store'])->name('catego
 Route::get('/Categorias/{id}/edit', [CategoriasController::class, 'edit'])->name('categorias.edit');
 Route::put('/Categorias/{id}', [CategoriasController::class, 'update'])->name('categorias.update');
 Route::delete('/Categorias/{id}', [CategoriasController::class, 'destroy'])->name('categorias.destroy');
-
 
 Route::get('/GestorProductos', function () {
     return view('modulos.gestor_productos');
@@ -123,3 +114,19 @@ Route::post('/loginempleados', [LoginController::class, 'login'])->name('loginem
 Route::get('/Inicio', function () {
     return view('modulos.Inicio');
 })->name('Inicio');
+
+Route::resource('nacionalidades', NacionalidadesController::class)->only(['store', 'destroy']);
+Route::resource('nacionalidades', NacionalidadesController::class);
+Route::resource('monedas', MonedaController::class);
+Route::resource('roles', 'App\Http\Controllers\RolController');
+Route::resource('departamentos', DepartamentoController::class);
+Route::resource('empleados', EmpleadosController::class);
+
+use App\Http\Controllers\ProveedoresController;
+
+Route::resource('proveedores', ProveedoresController::class);
+Route::get('/Proveedores', [ProveedoresController::class, 'index'])->name('proveedores');
+
+use App\Http\Controllers\ServicioController;
+
+Route::resource('servicios', ServicioController::class);

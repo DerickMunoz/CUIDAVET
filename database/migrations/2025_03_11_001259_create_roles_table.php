@@ -11,13 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('monedas', function (Blueprint $table) {
+        Schema::create('roles', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre');
             $table->timestamps();
-        });
-
-        Schema::table('ajustes', function (Blueprint $table) {
-            $table->string('moneda')->nullable(); // Agrega la columna moneda
         });
     }
 
@@ -26,10 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('monedas');
-
-        Schema::table('ajustes', function (Blueprint $table) {
-            $table->dropColumn('moneda');
-        });
+        Schema::dropIfExists('roles');
     }
 };

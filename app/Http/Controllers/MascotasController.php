@@ -33,16 +33,9 @@ class MascotasController extends Controller
             'observaciones' => 'nullable|string',
         ]);
 
-        $mascota = new Mascota();
-        $mascota->cliente_id = $request->cliente_id;
-        $mascota->nombre = $request->nombre;
-        $mascota->especie = $request->especie;
-        $mascota->raza = $request->raza;
-        $mascota->fecha_nacimiento = $request->fecha_nacimiento;
-        $mascota->sexo = $request->sexo;
-        $mascota->observaciones = $request->observaciones;
-        $mascota->save();
+        $mascota = Mascota::create($request->all());
 
+        // Cambiado a mascotas.index
         return redirect()->route('mascotas.index')
             ->with('success', 'Mascota creada exitosamente.');
     }

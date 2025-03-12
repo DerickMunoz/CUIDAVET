@@ -2,19 +2,14 @@
 
 @section('contenido')
     <section class="content-header">
-<<<<<<< HEAD
         <h1>Categorías</h1>
         <div class="text-right">
             <a href="{{ route('categorias.create') }}" class="btn btn-primary">Agregar Categoría</a>
         </div>
-=======
-        <h1>Categorias</h1>
->>>>>>> 3e452ff3a31586fa7de23ffca2b04147bf0c6b4f
     </section>
-    <section class="content">
+    <section class="content table-responsive">
         <div class="box">
-            <div class="box-body">
-<<<<<<< HEAD
+            <div class="box-body table-responsive">
                 @if (session('success'))
                     <div class="alert alert-success alert-dismissible">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -55,11 +50,3 @@
         </div>
     </section>
 @endsection
-=======
-                <!-- Contenido de la página de Categorias -->
-                <p>Bienvenido a la página de Categorias.</p>
-            </div>
-        </div>
-    </section>
-@endsection
->>>>>>> 3e452ff3a31586fa7de23ffca2b04147bf0c6b4f

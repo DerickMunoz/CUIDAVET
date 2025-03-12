@@ -3,17 +3,13 @@
 @section('contenido')
     <section class="content-header">
         <h1>Mascotas</h1>
-<<<<<<< HEAD
         <div class="text-right">
             <a href="{{ route('mascotas.create') }}" class="btn btn-primary">Agregar Mascota</a>
         </div>
-=======
->>>>>>> 3e452ff3a31586fa7de23ffca2b04147bf0c6b4f
     </section>
-    <section class="content">
+    <section class="content table-responsive">
         <div class="box">
-            <div class="box-body">
-<<<<<<< HEAD
+            <div class="box-body table-responsive">
                 @if (session('success'))
                     <div class="alert alert-success alert-dismissible">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -24,7 +20,6 @@
                 <table class="table table-bordered table-hover">
                     <thead>
                         <tr>
-                            <th>ID</th>
                             <th>Nombre</th>
                             <th>Dueño</th>
                             <th>DNI Dueño</th>
@@ -37,7 +32,6 @@
                     <tbody>
                         @forelse ($mascotas as $mascota)
                         <tr>
-                            <td>{{ $mascota->id }}</td>
                             <td>{{ $mascota->nombre }}</td>
                             <td>{{ $mascota->cliente->nombre }} {{ $mascota->cliente->apellido }}</td>
                             <td>{{ $mascota->cliente->dni }}</td>
@@ -64,11 +58,3 @@
         </div>
     </section>
 @endsection
-=======
-                <!-- Contenido de la página de Mascotas -->
-                <p>Bienvenido a la página de Mascotas.</p>
-            </div>
-        </div>
-    </section>
-@endsection
->>>>>>> 3e452ff3a31586fa7de23ffca2b04147bf0c6b4f
